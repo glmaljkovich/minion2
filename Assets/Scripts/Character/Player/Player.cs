@@ -79,4 +79,8 @@ public class Player : Character {
 		GetComponent<Rigidbody2D>().AddForce(hurtVector * hurtForce);
 	}
 
+	public float getToolPower() {
+		return damage;
+	}
+
 }

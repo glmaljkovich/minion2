@@ -13,7 +13,6 @@ public class PlayerMovementInY : MonoBehaviour {
 	private Vector2 gravity;
 	private float speed;
 	private Animator anim;
-	private bool isDead = false;
 	private Rigidbody2D rb;
 	private Player player;
 

@@ -3,16 +3,14 @@ using System.Collections;
 
 public class PlayerMovementInX : MonoBehaviour {
 	
-	[Range(3, 6)]
+	[Range(5, 10)]
 	public float runSpeed;
 
-	[Range(1, 2)]
+	[Range(1, 5)]
 	public float walkSpeed;
 
-	public float stepsCd;
 	public bool isDead = false;
 
-	private float currentCd;
 	private bool isRight;
 	private Rigidbody2D rb;
 	private Animator anim;
@@ -23,7 +21,6 @@ public class PlayerMovementInX : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 		player = GetComponent<Player> ();
-		currentCd = stepsCd;
 	}
 
 	void FixedUpdate () {
@@ -46,8 +43,6 @@ public class PlayerMovementInX : MonoBehaviour {
 				walk (movement);
 		} else
 			idle ();
-
-		currentCd += Time.deltaTime;
 	}
 
 	private void run(Vector3 movement){
