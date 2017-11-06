@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Block : MonoBehaviour
 {
 	public float hardness;
+	public BlockType type;
+	public int spawnCount;
 	protected Rigidbody2D myBody;
 	protected Animator anim;
+	protected Collider2D col;
 	private float lastHit = 0f;
 	public float hitCoolDown;
 
@@ -14,6 +18,7 @@ public class Block : MonoBehaviour
 	{
 		myBody = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
+		col = GetComponent<Collider2D> ();
 	}
 	
 	// Update is called once per frame
@@ -37,6 +42,15 @@ public class Block : MonoBehaviour
 
 	public bool mined(){
 		return hardness <= 0;
+	}
+
+	void OnCollisionEnter2D(Collision2D other) {
+		Player player = other.gameObject.GetComponent<Player> ();
+		if (mined () && player != null) {
+			player.inventory.AddBlocks (type, spawnCount);
+			spawnCount = 0;
+			Destroy (gameObject);
+		}
 	}
 
 

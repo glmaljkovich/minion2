@@ -10,6 +10,7 @@ public class Player : Character {
 	private float  secondsOfInvulnerability = 2f;
 	private bool deadAnim = false;
 
+	public Inventory inventory;
 	public float powerHurtForce = 2f;
 	public float hurtForce = 10f;
 	public float timeOfDead = 1f;
