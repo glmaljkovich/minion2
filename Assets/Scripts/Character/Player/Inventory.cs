@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
 	public Text inventoryText;
+	public Text selectedBlockText;
+	public GameObject[] blocks;
+	private int selectedBlockIndex;
 	private Dictionary <BlockType, int> inventory;
 	// Use this for initialization
 	void Start ()
@@ -21,6 +24,28 @@ public class Inventory : MonoBehaviour
 	void Update ()
 	{
 		inventoryText.text = getReadableBlockCount ();
+
+		if(selectedBlockIndex < 0){
+			selectedBlockIndex = blocks.Length - 1;
+		} else if (selectedBlockIndex > blocks.Length - 1) {
+			selectedBlockIndex = 0;
+		}
+
+		if (Input.GetKeyDown (KeyCode.UpArrow)) {
+			selectedBlockIndex++;
+			updateSelectedBlockText ();
+		}
+		if (Input.GetKeyDown (KeyCode.DownArrow)) {
+			selectedBlockIndex--;
+			updateSelectedBlockText ();
+		}
+			
+
+	}
+
+	private void updateSelectedBlockText(){
+		string blockType = blocks [selectedBlockIndex].GetComponent<Block> ().type.ToString ();
+		selectedBlockText.text = "Selected: <b>" + blockType + "</b>";
 	}
 
 	public void AddBlocks(BlockType type, int count){
@@ -45,6 +70,10 @@ public class Inventory : MonoBehaviour
 		}
 
 		return result;
+	}
+
+	public GameObject getSelectedBlock(){
+		return blocks [selectedBlockIndex];
 	}
 }
 

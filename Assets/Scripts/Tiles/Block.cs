@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Block : MonoBehaviour
 {
-	public float hardness;
+	public float hardness = 20;
 	public BlockType type;
 	public int spawnCount;
 	protected Rigidbody2D myBody;
@@ -26,7 +26,7 @@ public class Block : MonoBehaviour
 	{
 		if (mined ()) {
 			myBody.bodyType = RigidbodyType2D.Dynamic;
-			transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+			transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
 		}
 	}
 

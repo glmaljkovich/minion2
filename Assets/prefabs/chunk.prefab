@@ -57,7 +57,7 @@ MonoBehaviour:
   smoothness: 12
   groundBaseHeight: 8
   seed: 0
-  padding: 0.4
+  padding: 1
   stoneTile: {fileID: 1247922082889276, guid: a2a1517ff82924704a645343bae828f9, type: 2}
   dirtTile: {fileID: 1454785481633504, guid: ff31730f87e72402b92dea7ed7d656c1, type: 2}
   grassTile: {fileID: 1718726016004012, guid: e0f434ac849914ede888ce2172180dbb, type: 2}
