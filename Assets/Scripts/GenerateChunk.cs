@@ -12,6 +12,7 @@ public class GenerateChunk : MonoBehaviour {
 	public int groundBaseHeight;
 	[HideInInspector]
 	public float seed;
+	public float padding;
 
 	// Tiles
 	public GameObject stoneTile;
@@ -20,6 +21,7 @@ public class GenerateChunk : MonoBehaviour {
 	public GameObject coalTile;
 	public GameObject goldTile;
 	public GameObject diamondTile;
+	private float lastPosX = 0;
 
 	// Chances
 	[Range (0, 100)]
@@ -37,23 +39,26 @@ public class GenerateChunk : MonoBehaviour {
 		// Columns iteration
 		for (int i = 0; i < width; i++) {
 			// Creates a column
-			createPerlinTiles (i);
+			createPerlinTiles (lastPosX);
+			lastPosX += (1 + padding);
 		}
 	}
 
-	private void createPerlinTiles(int x){
+	private void createPerlinTiles(float x){
 		float positionX = x + transform.position.x;
 		int perlinHeight = Mathf.RoundToInt (Mathf.PerlinNoise (seed, positionX / smoothness) * heightMultipler) + groundBaseHeight;
 
+		float lastPosY = 0;
 		for (int y = 0; y < perlinHeight; y++) {
-			createTile (x, y, perlinHeight);
+			createTile (x, lastPosY, y, perlinHeight);
+			lastPosY += (1 + padding);
 			// TODO: Create background tile
 		}
 	
 	}
 
-	private void createTile (int x, int y, int perlinHeight){
-		GameObject selectedTile = getTile (y, perlinHeight);
+	private void createTile (float x, float y, int index, int perlinHeight){
+		GameObject selectedTile = getTile (index, perlinHeight);
 		GameObject newTile = Instantiate (selectedTile, Vector3.zero, Quaternion.identity) as GameObject;
 
 		newTile.transform.parent = this.gameObject.transform;

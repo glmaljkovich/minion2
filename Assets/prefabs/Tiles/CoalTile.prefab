@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4370653965761832}
-  - component: {fileID: 60334668909213986}
   - component: {fileID: 212136068138393290}
   - component: {fileID: 50544931782951092}
   - component: {fileID: 114982864001380022}
+  - component: {fileID: 60228888749343426}
   m_Layer: 0
   m_Name: CoalTile
   m_TagString: ground
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1196154022973074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.45, y: 1.45, z: 1.45}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60334668909213986
+--- !u!60 &60228888749343426
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,11 +87,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
+    - - {x: -0.35, y: 0.35}
+      - {x: -0.35, y: -0.35}
+      - {x: 0.35, y: -0.35}
+      - {x: 0.35, y: 0.35}
 --- !u!114 &114982864001380022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,6 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hardness: 10
+  type: 3
+  spawnCount: 1
   hitCoolDown: 0.5
 --- !u!212 &212136068138393290
 SpriteRenderer:
