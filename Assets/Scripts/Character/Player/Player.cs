@@ -27,7 +27,7 @@ public class Player : Character {
 
 	void Update () {
 		if (!isDead ()) {
-			checkVulnerability ();	
+
 		} else {
 			updateDeath ();
 		}
@@ -82,6 +82,11 @@ public class Player : Character {
 
 	public float getToolPower() {
 		return damage;
+	}
+
+	public void Die(){
+		this.health.takeDamage (1000);
+		this.myBody.simulated = false;
 	}
 
 }
