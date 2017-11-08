@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class MouseInput : MonoBehaviour {
 	private Player player;
+	private Inventory inventory;
+
 	// Use this for initialization
 	void Start () {
 		player = gameObject.GetComponent<Player> ();
+		inventory = player.inventory;
 	}
 	
 	// Update is called once per frame
@@ -43,18 +46,29 @@ public class MouseInput : MonoBehaviour {
 
 			if (block == null) {
 				Vector3 position = new Vector3 (Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0);
-
-				GameObject originTile = player.inventory.getSelectedBlock ();
-
-				Block origin = originTile.GetComponent<Block> ();
-
-				GameObject newTile = Instantiate (player.inventory.getSelectedBlock (), position, Quaternion.identity) as GameObject;
-
-				newTile.transform.localScale = originTile.transform.localScale;
-				newTile.GetComponent<SpriteRenderer>().sortingLayerName = "terrain";
-				newTile.GetComponent<Block> ().hardness = origin.hardness;
+				placeBlock (position);
 			}
 		}
+	}
+
+	private void placeBlock(Vector3 position) {
+		if (inventory.canAddSelectedBlock ()) {
+			GameObject originTile = inventory.getSelectedBlock ();
+
+			inventory.removeBlocks (originTile.GetComponent<Block>(), 1);
+
+			instantiateBlock (originTile, position);
+
+		}
+	}
+
+	private void instantiateBlock(GameObject originTile, Vector3 position){
+		GameObject newTile = Instantiate (originTile, position, Quaternion.identity) as GameObject;
+
+		newTile.transform.localScale = originTile.transform.localScale;
+		newTile.GetComponent<SpriteRenderer>().sortingLayerName = "terrain";
+		newTile.GetComponent<Block> ().hardness = originTile.GetComponent<Block>().hardness;
+	
 	}
 		
 }

@@ -102,10 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3b6fd975a5b4a35a115bba6a406ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hardness: 10
+  hardness: 60
   type: 2
   spawnCount: 1
   hitCoolDown: 0.5
+  image: {fileID: 21300000, guid: 5562ea8f0ccde4a9b99b21a858c0a1cc, type: 3}
 --- !u!212 &212338184070591652
 SpriteRenderer:
   m_ObjectHideFlags: 1

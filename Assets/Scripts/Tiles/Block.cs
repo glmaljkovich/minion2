@@ -12,6 +12,7 @@ public class Block : MonoBehaviour
 	protected Collider2D col;
 	private float lastHit = 0f;
 	public float hitCoolDown;
+	public Sprite image;
 
 	// Use this for initialization
 	void Start ()
@@ -34,6 +35,7 @@ public class Block : MonoBehaviour
 		if (!mined () && lastHit <= 0) {
 			hardness -= toolPower;
 			lastHit = hitCoolDown;
+			anim.SetTrigger("Hit");
 		} else {
 			lastHit -= Time.deltaTime;
 		}
@@ -47,7 +49,8 @@ public class Block : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D other) {
 		Player player = other.gameObject.GetComponent<Player> ();
 		if (mined () && player != null) {
-			player.inventory.AddBlocks (type, spawnCount);
+
+			player.inventory.AddBlocks (this, spawnCount);
 			spawnCount = 0;
 			Destroy (gameObject);
 		}

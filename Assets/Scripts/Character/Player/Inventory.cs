@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
 
 public class Inventory : MonoBehaviour
 {
@@ -10,10 +11,13 @@ public class Inventory : MonoBehaviour
 	public GameObject[] blocks;
 	private int selectedBlockIndex;
 	private Dictionary <BlockType, int> inventory;
+	private InventoryUI inventoryUI;
+
 	// Use this for initialization
 	void Start ()
 	{
 		inventory = new Dictionary<BlockType, int> ();
+		inventoryUI = FindObjectOfType<InventoryUI> () as InventoryUI;
 
 		foreach (BlockType aType in System.Enum.GetValues(typeof(BlockType))) {
 			inventory.Add (aType, 0);
@@ -45,15 +49,31 @@ public class Inventory : MonoBehaviour
 
 	private void updateSelectedBlockText(){
 		string blockType = blocks [selectedBlockIndex].GetComponent<Block> ().type.ToString ();
-		selectedBlockText.text = "Selected: <b>" + blockType + "</b>";
+		selectedBlockText.text = "<b>" + blockType + "</b>";
 	}
 
-	public void AddBlocks(BlockType type, int count){
+	public void AddBlocks(Block origin, int count){
+		BlockType type = origin.type;
+
 		inventory [type] += count;
+
+		Item item = createItem (origin, inventory [type]);
+
+		inventoryUI.AddItem (item);
+
 	}
 
-	public void removeBlocks(BlockType type, int count) {
-		inventory [type] += count;
+	public void removeBlocks(Block origin, int count) {
+		BlockType type = origin.type;
+
+		if (inventory [type] > 0) {
+			inventory [type] -= count;
+			// Poniendo la tapa y volviendola a sacar?
+			Item item = createItem (origin, inventory [type]);
+
+			inventoryUI.RemoveItem (item);
+		}
+
 	}
 
 	public int getBlockCount(BlockType type) {
@@ -74,6 +94,25 @@ public class Inventory : MonoBehaviour
 
 	public GameObject getSelectedBlock(){
 		return blocks [selectedBlockIndex];
+	}
+
+	public bool canAddSelectedBlock() {
+		BlockType type = getSelectedBlock().GetComponent<Block>().type; 
+		return inventory [type] > 0;
+	}
+
+	Item createItem(Block origin, int count) {
+		Item item = Item.CreateInstance <Item>();
+
+		item.sprite = origin.image;
+		item.item = origin;
+		item.quantity = count;
+
+		return item;
+	}
+
+	public GameObject getOriginalBlock(BlockType type) {
+		return Array.Find(blocks, gObject => gObject.GetComponent<Block>().type.Equals(type));
 	}
 }
 
