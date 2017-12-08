@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MouseInput : MonoBehaviour {
 	private Player player;
 	private Inventory inventory;
 	public float maxDistance = 1f;
+	public float blockPadding = 2f;
 
 	// Use this for initialization
 	void Start () {
@@ -46,10 +48,14 @@ public class MouseInput : MonoBehaviour {
 			GameObject block = (hit.collider != null) ? hit.collider.gameObject : null;
 
 			if (block == null && blockIsInPlayerRange()) {
-				Vector3 position = new Vector3 (Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0);
+				Vector3 position = new Vector3 (getRoundedPosition(mousePosition.x), getRoundedPosition(mousePosition.y), 0);
 				placeBlock (position);
 			}
 		}
+	}
+
+	private float getRoundedPosition(float value) {
+		return (float) Math.Round((value / blockPadding), MidpointRounding.AwayFromZero) * blockPadding;
 	}
 
 	private void placeBlock(Vector3 position) {

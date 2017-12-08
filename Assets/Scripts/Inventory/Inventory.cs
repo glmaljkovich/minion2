@@ -68,7 +68,7 @@ public class Inventory : MonoBehaviour
 
 		if (inventory [type] > 0) {
 			inventory [type] -= count;
-			// Poniendo la tapa y volviendola a sacar?
+			// Poniendo la tapa y volviendola a sacar? no.
 			Item item = createItem (origin, inventory [type]);
 
 			inventoryUI.RemoveItem (item);
