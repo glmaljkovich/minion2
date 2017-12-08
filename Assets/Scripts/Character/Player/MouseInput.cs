@@ -5,6 +5,7 @@ using UnityEngine;
 public class MouseInput : MonoBehaviour {
 	private Player player;
 	private Inventory inventory;
+	public float maxDistance = 1f;
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +29,7 @@ public class MouseInput : MonoBehaviour {
 
 			GameObject block = (hit.collider != null) ? hit.collider.gameObject : null;
 
-			if (block != null) {
+			if (block != null && blockIsInPlayerRange()) {
 				block.GetComponent<Block> ().mine (player.getToolPower ());
 			}
 		}
@@ -44,7 +45,7 @@ public class MouseInput : MonoBehaviour {
 
 			GameObject block = (hit.collider != null) ? hit.collider.gameObject : null;
 
-			if (block == null) {
+			if (block == null && blockIsInPlayerRange()) {
 				Vector3 position = new Vector3 (Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0);
 				placeBlock (position);
 			}
@@ -69,6 +70,13 @@ public class MouseInput : MonoBehaviour {
 		newTile.GetComponent<SpriteRenderer>().sortingLayerName = "terrain";
 		newTile.GetComponent<Block> ().hardness = originTile.GetComponent<Block>().hardness;
 	
+	}
+
+	private bool blockIsInPlayerRange() {
+		Vector3 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+		Vector3 playerPos = player.transform.position;
+		float delta = Mathf.Abs(Mathf.Abs (playerPos.x) - Mathf.Abs (mousePosition.x));
+		return delta < maxDistance;
 	}
 		
 }

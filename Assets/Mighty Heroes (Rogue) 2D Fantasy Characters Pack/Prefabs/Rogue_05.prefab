@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010045657174}
   - component: {fileID: 212000012468926662}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_head_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000012179377842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_leg_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011066156290}
   - component: {fileID: 212000011609265372}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_elbow_r_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000014086755198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_head_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000013131299948}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_leg_R_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000012731963276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_shoulder_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000011189407184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_wrist_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000012577841760}
   - component: {fileID: 212000014249141102}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_hair_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000010616926112}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_elbow_R_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000010815523612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_shoulder_R_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000011874010830}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_elbow_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010779982372}
   - component: {fileID: 212000011616803952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_leg_l_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011878902412}
   - component: {fileID: 212000013756408618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_elbow_l_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000010503939236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_pelvis_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000012826025410}
   - component: {fileID: 212000010851346082}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_pelvis_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000014005838040}
   - component: {fileID: 212000010953662964}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_weapon_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011926754608}
   - component: {fileID: 212000013696503050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_boot_l_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000012562101566}
   - component: {fileID: 212000011475767052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_boot_r_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000013623690178}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_weapon_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000010110725294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_wrist_R_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000010192286818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_boot_R_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000012764379542}
   - component: {fileID: 212000013136576376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_weapon_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010477373914}
   - component: {fileID: 212000013502091514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_torso_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011185160236}
   - component: {fileID: 212000011618033794}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_leg_r_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000014060623408}
   - component: {fileID: 212000011531019070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_wrist_l_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010391452478}
   - component: {fileID: 212000011893023580}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_face_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010529118894}
   - component: {fileID: 212000013291993896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_shoulder_r_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,9 +440,17 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011914616612}
   - component: {fileID: 95000010398391834}
-  m_Layer: 0
+  - component: {fileID: 50322081237351610}
+  - component: {fileID: 70291978676937118}
+  - component: {fileID: 114572588382500416}
+  - component: {fileID: 114359355924199832}
+  - component: {fileID: 114339960821651408}
+  - component: {fileID: 114322903986829044}
+  - component: {fileID: 114414410480054480}
+  - component: {fileID: 114361499527016914}
+  m_Layer: 8
   m_Name: Rogue_05
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -455,7 +463,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000013314612106}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_boot_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +479,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000012462271628}
   - component: {fileID: 212000013601946804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_shoulder_l_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +494,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000011743482402}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_torso_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000012544012162}
   - component: {fileID: 212000010977315352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rogue_wrist_r_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,8 +751,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013304306144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 12, y: 27.710001, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4000010503939236}
   m_Father: {fileID: 0}
@@ -956,6 +964,41 @@ Transform:
   m_Father: {fileID: 4000011743482402}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.9750004}
+--- !u!50 &50322081237351610
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013304306144}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1.1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 4
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &70291978676937118
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013304306144}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.10162163, y: 3.7890282}
+  m_Size: {x: 4.0132027, y: 7.7650833}
+  m_Direction: 0
 --- !u!95 &95000010398391834
 Animator:
   serializedVersion: 3
@@ -973,6 +1016,98 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114322903986829044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013304306144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3d239a9bff3497d8262a2cbfe796b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  scale: {x: 0, y: 0}
+  character: {fileID: 114339960821651408}
+  repeatDamagePeriod: 2
+  healthBar: {fileID: 0}
+--- !u!114 &114339960821651408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013304306144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a310370c388f3486da60a92e176c96cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  defense: 0
+  inventory: {fileID: 114361499527016914}
+  powerHurtForce: 2
+  hurtForce: 10
+  timeOfDead: 1
+--- !u!114 &114359355924199832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013304306144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fbe8a8739c24b47a453e23454ad81b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 10
+  walkSpeed: 5
+  isDead: 0
+--- !u!114 &114361499527016914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013304306144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465622345d6c9480bb7f49e3dc939dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryText: {fileID: 0}
+  selectedBlockText: {fileID: 0}
+  blocks:
+  - {fileID: 1718726016004012, guid: e0f434ac849914ede888ce2172180dbb, type: 2}
+  - {fileID: 1454785481633504, guid: ff31730f87e72402b92dea7ed7d656c1, type: 2}
+  - {fileID: 1247922082889276, guid: a2a1517ff82924704a645343bae828f9, type: 2}
+  - {fileID: 1196154022973074, guid: d86415ca38b95453dabbe1b611f1d9b4, type: 2}
+  - {fileID: 1223856968256912, guid: 88d9519252715466d83a8b98db9adacb, type: 2}
+  - {fileID: 1906404110992872, guid: 47cbcd37f7b474b6987e83052dcc0602, type: 2}
+--- !u!114 &114414410480054480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013304306144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f31e44457c1d84c41840b113c5b30722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114572588382500416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013304306144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d93751c6ded48818d6307520754294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpSpeed: 18
+  grounded: 0
+  jumpBoostGround: 0
 --- !u!212 &212000010851346082
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1004,8 +1139,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: f5e38fc0746afdb408f3af29c6c737cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1048,8 +1183,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 97ad91e8b9bc5f94f941f06a70776c26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1092,8 +1227,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: c764210032bc5df46a28cb6e1f3ad991, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1136,8 +1271,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: debc4edcc117abe4f8600caca642318f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1180,8 +1315,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 16
   m_Sprite: {fileID: 21300000, guid: fde91a030e5382647a20ec036c8d578f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1224,8 +1359,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c8246436787abd045a65c5d246ef4344, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1268,8 +1403,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 40e550cd3b539f14eb98d42b6769b592, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1312,8 +1447,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 7b78357522a34d64bb8775b962b0deb0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1356,8 +1491,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 41375989850254546b76c3a6813e6d19, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1400,8 +1535,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: e17e5dd745f21b043bd6d387e5c5a19b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1444,8 +1579,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: 97ad91e8b9bc5f94f941f06a70776c26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1488,8 +1623,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 44abaa0566659e146ad1c3d17addf82b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1532,8 +1667,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: fff248787aa9dc44d819b77a6686c0af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1576,8 +1711,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 14
   m_Sprite: {fileID: 21300000, guid: 9573c51cf9ed4c94ca1925d245b830c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1620,8 +1755,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: e97e92bbd1093e044ab575af7f9999e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1664,8 +1799,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 82356071de2f4a942b6c0eb7db5dbc94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1708,8 +1843,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1713331565
+  m_SortingLayer: 4
   m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: 04f6c40e52535b941b42e11550f9cb8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

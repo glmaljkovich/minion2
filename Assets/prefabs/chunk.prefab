@@ -54,8 +54,8 @@ MonoBehaviour:
   width: 25
   heightMultipler: 10
   tileDelta: 5
-  smoothness: 12
-  groundBaseHeight: 8
+  smoothness: 10
+  groundBaseHeight: 1
   seed: 0
   padding: 1
   stoneTile: {fileID: 1247922082889276, guid: a2a1517ff82924704a645343bae828f9, type: 2}

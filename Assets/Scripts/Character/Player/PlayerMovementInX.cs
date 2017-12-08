@@ -3,10 +3,10 @@ using System.Collections;
 
 public class PlayerMovementInX : MonoBehaviour {
 	
-	[Range(5, 10)]
+	[Range(10, 20)]
 	public float runSpeed;
 
-	[Range(1, 5)]
+	[Range(1, 10)]
 	public float walkSpeed;
 
 	public bool isDead = false;
