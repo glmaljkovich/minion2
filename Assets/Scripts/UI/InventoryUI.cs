@@ -6,11 +6,12 @@ using System.Collections.Generic;
 
 public class InventoryUI : MonoBehaviour
 {
-	public Image[] itemImages = new Image[numItemSlots];
-	public Item[] items = new Item[numItemSlots];
-	public Text[] itemCounters = new Text[numItemSlots];
+	public const int numItemSlots = 12;
 
-	public const int numItemSlots = 6;
+//	public Image[] itemImages = new Image[numItemSlots];
+//	public Item[] items = new Item[numItemSlots];
+//	public Text[] itemCounters = new Text[numItemSlots];
+	public ItemSlot[] slots = new ItemSlot[numItemSlots]; 
 
 	public void AddItem(Item itemToAdd)
 	{
@@ -20,12 +21,19 @@ public class InventoryUI : MonoBehaviour
 			return;
 		}
 
-		int i = Array.FindIndex (items, item => item == null);
-		items[i] = itemToAdd;
-		itemImages[i].sprite = itemToAdd.sprite;
-		itemImages[i].enabled = true;
-		itemCounters [i].text = itemToAdd.quantity.ToString();
-		itemCounters[i].enabled = true;
+		int i = Array.FindIndex (slots, slot => slot.item == null);
+		ItemSlot emptySlot = slots[i];
+		emptySlot.item = itemToAdd;
+		emptySlot.image.sprite = itemToAdd.sprite;
+		emptySlot.image.enabled = true;
+		emptySlot.counterText.text = itemToAdd.quantity.ToString();
+		emptySlot.counterText.enabled = true;
+//		int i = Array.FindIndex (items, item => item == null);
+//		items[i] = itemToAdd;
+//		itemImages[i].sprite = itemToAdd.sprite;
+//		itemImages[i].enabled = true;
+//		itemCounters [i].text = itemToAdd.quantity.ToString();
+//		itemCounters[i].enabled = true;
 	}
 
 	void increaseItemCount(Item item) {
@@ -38,13 +46,14 @@ public class InventoryUI : MonoBehaviour
 	}
 
 	void updateItemCount(Item itemToUpdate, int count){
-		int i = Array.FindIndex (items, item => item.getBlockType().Equals(itemToUpdate.getBlockType()));
-
-		itemCounters [i].text = count.ToString();
+//		int i = Array.FindIndex (items, item => item.getBlockType().Equals(itemToUpdate.getBlockType()));
+		int i = Array.FindIndex (slots, slot => slot.item.getBlockType().Equals(itemToUpdate.getBlockType()));
+//		itemCounters [i].text = count.ToString();
+		slots[i].counterText.text = count.ToString();
 	}
 
 	bool hasItem(Item anItem){
-		return items[0] != null && Array.Exists (items, item => item != null &&  item.getBlockType ().Equals (anItem.getBlockType ()));
+		return slots[0].item != null && Array.Exists (slots, slot => slot.item != null &&  slot.item.getBlockType ().Equals (anItem.getBlockType ()));
 	}
 
 	public void RemoveItem (Item itemToRemove)
@@ -61,15 +70,21 @@ public class InventoryUI : MonoBehaviour
 	}
 
 	private void removeItemFromList(Item itemToRemove){
-		for (int i = 0; i < items.Length; i++)
+		for (int i = 0; i < slots.Length; i++)
 		{
-			if (items[i] == itemToRemove)
+			if (slots[i].item == itemToRemove)
 			{
-				items[i] = null;
-				itemImages[i].sprite = null;
-				itemImages[i].enabled = false;
-				itemCounters [i].text = "0";
-				itemCounters[i].enabled = false;
+				ItemSlot slot = slots [i];
+				slot.item = null;
+				slot.image.sprite = null;
+				slot.image.enabled = false;
+				slot.counterText.text = "0";
+				slot.counterText.enabled = false;
+//				items[i] = null;
+//				itemImages[i].sprite = null;
+//				itemImages[i].enabled = false;
+//				itemCounters [i].text = "0";
+//				itemCounters[i].enabled = false;
 				return;
 			}
 		}

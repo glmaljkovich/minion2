@@ -8,6 +8,7 @@ public class MouseInput : MonoBehaviour {
 	private Inventory inventory;
 	public float maxDistance = 1f;
 	public float blockPadding = 2f;
+	public bool isDragging = false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,7 @@ public class MouseInput : MonoBehaviour {
 	}
 
 	private void destroyBlock() {
-		if (Input.GetMouseButton(0)) {
+		if (!isDragging && Input.GetMouseButton(0)) {
 			
 			Vector3 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			Vector2 mousePosition2D = new Vector2 (mousePosition.x, mousePosition.y);
@@ -38,7 +39,7 @@ public class MouseInput : MonoBehaviour {
 	}
 
 	private void createBlock(){
-		if (Input.GetMouseButton(1)) {
+		if (!isDragging && Input.GetMouseButton(1)) {
 
 			Vector3 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			Vector2 mousePosition2D = new Vector2 (mousePosition.x, mousePosition.y);

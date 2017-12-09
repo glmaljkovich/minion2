@@ -8,6 +8,7 @@ TagManager:
   - GrassTile
   - StoneTile
   - ground
+  - Inventory
   layers:
   - Default
   - TransparentFX
