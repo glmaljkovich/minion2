@@ -3,6 +3,6 @@ using System.Collections;
 
 public enum BlockType
 {
-	Grass, Dirt, Stone, Coal, Gold, Diamond
+	Grass, Dirt, Stone, Coal, Gold, Diamond, Table, Dagger
 }
 

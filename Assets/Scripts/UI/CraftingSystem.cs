@@ -1,13 +1,70 @@
 ﻿using UnityEngine;
 using System;
-using System.Collections;
 using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
 
-public class InventoryUI : MonoBehaviour
+public class CraftingSystem : MonoBehaviour
 {
-	public const int numItemSlots = 12;
+	public const int numItemSlots = 9;
 	public ItemSlot[] slots = new ItemSlot[numItemSlots]; 
+	public Recipe[] recipes;
+	public ItemSlot recipeSlot;
+	// Use this for initialization
+	void Start ()
+	{
+	
+	}
+	
+	// Update is called once per frame
+	void Update ()
+	{
+	
+	}
+
+	// TODO:
+	// - Global blocklist separate from selectable blocks to use.
+	// - instance block game objects from a generic origin and build them passing the block
+	// - Make prefabs for new blocks
+
+	void OnItemPlace(DragAndDropCell.DropDescriptor desc)
+	{
+		DummyControlUnit sourceSheet = desc.sourceCell.GetComponentInParent<DummyControlUnit>();
+		DummyControlUnit destinationSheet = desc.destinationCell.GetComponentInParent<DummyControlUnit>();
+		// If item dropped between different sheets
+		if (destinationSheet != sourceSheet)
+		{
+			Debug.Log(desc.item.name + " is dropped from " + sourceSheet.name + " to " + destinationSheet.name);
+		}
+
+		findRecipes ();
+	}
+
+	public void findRecipes(){
+		foreach (Recipe recipe in recipes) {
+			if (recipe.matches(getItems())) {
+				showRecipe (recipe);
+				return;
+			}
+		}
+	}
+
+	public List<Item> getItems() {
+		List<Item> items = new List<Item> ();
+		foreach (ItemSlot slot in slots) {
+			items.Add (slot.item);
+		}
+		return items;
+	}
+
+	public void showRecipe(Recipe recipe){
+		Item item = recipe.result;
+		recipeSlot.item = item;
+		recipeSlot.image.sprite = item.sprite;
+		recipeSlot.image.enabled = true;
+		recipeSlot.counterText.text = item.quantity.ToString();
+		recipeSlot.counterText.enabled = true;
+	}
 
 	public void AddItem(Item itemToAdd)
 	{
