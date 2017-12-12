@@ -264,8 +264,6 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
                 secondItem.transform.localPosition = Vector3.zero;
                 firstCell.SetBackgroundState(true);
 
-				print (slot1.item.getBlockType ().ToString ());
-				print (slot2.item.getBlockType ().ToString ());
             }
         }
     }

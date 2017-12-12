@@ -10,6 +10,8 @@ public class CraftingSystem : MonoBehaviour
 	public ItemSlot[] slots = new ItemSlot[numItemSlots]; 
 	public Recipe[] recipes;
 	public ItemSlot recipeSlot;
+	public Text materials;
+	public Text recipeName;
 	private Recipe currentRecipe;
 	private Inventory inventory;
 	// Use this for initialization
@@ -30,14 +32,6 @@ public class CraftingSystem : MonoBehaviour
 
 	void OnItemPlace(DragAndDropCell.DropDescriptor desc)
 	{
-		DummyControlUnit sourceSheet = desc.sourceCell.GetComponentInParent<DummyControlUnit>();
-		DummyControlUnit destinationSheet = desc.destinationCell.GetComponentInParent<DummyControlUnit>();
-		// If item dropped between different sheets
-		if (destinationSheet != sourceSheet)
-		{
-			Debug.Log(desc.item.name + " is dropped from " + sourceSheet.name + " to " + destinationSheet.name);
-		}
-
 		findRecipes ();
 	}
 
@@ -54,7 +48,9 @@ public class CraftingSystem : MonoBehaviour
 	public List<Item> getItems() {
 		List<Item> items = new List<Item> ();
 		foreach (ItemSlot slot in slots) {
-			items.Add (slot.item);
+			if (slot.item != null) {
+				items.Add (slot.item);
+			}
 		}
 		return items;
 	}
@@ -62,10 +58,25 @@ public class CraftingSystem : MonoBehaviour
 	public void showRecipe(Recipe recipe){
 		Item item = recipe.result;
 		recipeSlot.item = item;
+		print ("set item");
 		recipeSlot.image.sprite = item.sprite;
+		print ("set image");
 		recipeSlot.image.enabled = true;
+		print ("set image enabled");
 		recipeSlot.counterText.text = item.quantity.ToString();
+		print ("set count text");
 		recipeSlot.counterText.enabled = true;
+		print ("set recipe name");
+		recipeName.text = recipe.name;
+		showIngredients (recipe);
+	}
+
+	public void showIngredients(Recipe recipe){
+		string result = "";
+		foreach (Item item in recipe.ingredients) {
+			result += item.quantity.ToString() + " " + item.getBlockType().ToString() + "\n";
+		}
+		materials.text = result;
 	}
 
 	public void craft(){

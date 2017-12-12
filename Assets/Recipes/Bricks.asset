@@ -14,5 +14,5 @@ MonoBehaviour:
   ingredients:
   - {fileID: 11400000, guid: 448af8744d2854e4ab2c4713bf065eeb, type: 2}
   - {fileID: 11400000, guid: 6e110fb8b4f3140e7aff1089959b8d1d, type: 2}
-  result: {fileID: 0}
+  result: {fileID: 11400000, guid: c9185222fc4e34326aa9b2e32cdcc5b9, type: 2}
   name: Stone Bricks
