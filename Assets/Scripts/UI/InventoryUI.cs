@@ -40,7 +40,7 @@ public class InventoryUI : MonoBehaviour
 	}
 
 	bool hasItem(Item anItem){
-		return slots[0].item != null && Array.Exists (slots, slot => slot.item != null &&  slot.item.getBlockType ().Equals (anItem.getBlockType ()));
+		return Array.Exists (slots, slot => slot.item != null &&  slot.item.getBlockType ().Equals (anItem.getBlockType ()));
 	}
 
 	public void RemoveItem (Item itemToRemove)
@@ -59,7 +59,7 @@ public class InventoryUI : MonoBehaviour
 	private void removeItemFromList(Item itemToRemove){
 		for (int i = 0; i < slots.Length; i++)
 		{
-			if (slots[i].item == itemToRemove)
+			if (slots[i].item.getBlockType() == itemToRemove.getBlockType())
 			{
 				ItemSlot slot = slots [i];
 				slot.item = null;

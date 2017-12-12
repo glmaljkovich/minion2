@@ -19,6 +19,7 @@ public class GenerateChunk : MonoBehaviour {
 	public GameObject dirtTile;
 	public GameObject grassTile;
 	public GameObject coalTile;
+	public GameObject ironTile;
 	public GameObject goldTile;
 	public GameObject diamondTile;
 	private float lastPosX = 0;
@@ -26,6 +27,8 @@ public class GenerateChunk : MonoBehaviour {
 	// Chances
 	[Range (0, 100)]
 	public float coalChance;
+	[Range (0, 100)]
+	public float ironChance;
 	[Range (0, 100)]
 	public float goldChance;
 	[Range (0, 100)]
@@ -89,6 +92,8 @@ public class GenerateChunk : MonoBehaviour {
 			selectedMineral = diamondTile;
 		} else if (randomChance < goldChance) {
 			selectedMineral = goldTile;
+		} else if (randomChance < ironChance) {
+			selectedMineral = ironTile;
 		} else if (randomChance < coalChance) {
 			selectedMineral = coalTile;
 		} else {

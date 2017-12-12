@@ -240,8 +240,17 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
         {
             DragAndDropItem firstItem = firstCell.GetItem();                // Get item from first cell
             DragAndDropItem secondItem = secondCell.GetItem();              // Get item from second cell
+
+			ItemSlot slot1 = firstCell.GetComponent<ItemSlot>();
+			ItemSlot slot2 = secondCell.GetComponent<ItemSlot>();
+
+			Item item1 = slot1.item;
+			Item item2 = slot2.item;
+
+
             if (firstItem != null)
             {
+				slot1.item = item2;
                 // Place first item into second cell
                 firstItem.transform.SetParent(secondCell.transform, false);
                 firstItem.transform.localPosition = Vector3.zero;
@@ -249,10 +258,14 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
             }
             if (secondItem != null)
             {
+				slot2.item = item1;
                 // Place second item into first cell
                 secondItem.transform.SetParent(firstCell.transform, false);
                 secondItem.transform.localPosition = Vector3.zero;
                 firstCell.SetBackgroundState(true);
+
+				print (slot1.item.getBlockType ().ToString ());
+				print (slot2.item.getBlockType ().ToString ());
             }
         }
     }

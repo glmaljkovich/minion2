@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hardness: 60
-  type: 5
+  type: 6
   spawnCount: 1
   hitCoolDown: 0.5
   image: {fileID: 21300000, guid: 3f7a97612465d41d995be617dc9ec497, type: 3}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a504fa1064348cdbce4c42fdc24f43, type: 3}
+  m_Name: Bricks
+  m_EditorClassIdentifier: 
+  ingredients:
+  - {fileID: 11400000, guid: 448af8744d2854e4ab2c4713bf065eeb, type: 2}
+  - {fileID: 11400000, guid: 6e110fb8b4f3140e7aff1089959b8d1d, type: 2}
+  result: {fileID: 0}
+  name: Stone Bricks

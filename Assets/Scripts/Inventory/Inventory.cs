@@ -8,52 +8,36 @@ public class Inventory : MonoBehaviour
 {
 	public Text inventoryText;
 	public Text selectedBlockText;
-	public GameObject[] blocks;
-	private int selectedBlockIndex;
+	private BlockType selectedBlock;
 	private Dictionary <BlockType, int> inventory;
 	private InventoryUI inventoryUI;
+	private BlockList blocklist;
 
 	// Use this for initialization
 	void Start ()
 	{
 		inventory = new Dictionary<BlockType, int> ();
 		inventoryUI = FindObjectOfType<InventoryUI> () as InventoryUI;
-
-		foreach (BlockType aType in System.Enum.GetValues(typeof(BlockType))) {
-			inventory.Add (aType, 0);
-		}
+		blocklist = FindObjectOfType<BlockList> () as BlockList;
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
-		inventoryText.text = getReadableBlockCount ();
-
-		if(selectedBlockIndex < 0){
-			selectedBlockIndex = blocks.Length - 1;
-		} else if (selectedBlockIndex > blocks.Length - 1) {
-			selectedBlockIndex = 0;
-		}
-
-		if (Input.GetKeyDown (KeyCode.UpArrow)) {
-			selectedBlockIndex++;
-			updateSelectedBlockText ();
-		}
-		if (Input.GetKeyDown (KeyCode.DownArrow)) {
-			selectedBlockIndex--;
-			updateSelectedBlockText ();
-		}
-			
-
+		updateSelectedBlockText ();
 	}
 
 	private void updateSelectedBlockText(){
-		string blockType = blocks [selectedBlockIndex].GetComponent<Block> ().type.ToString ();
-		selectedBlockText.text = "<b>" + blockType + "</b>";
+		if (selectedBlock != null) {
+			selectedBlockText.text = "<b>" + selectedBlock + "</b>";
+		}
 	}
 
 	public void AddBlocks(Block origin, int count){
 		BlockType type = origin.type;
+
+		if (!inventory.ContainsKey (type))
+			inventory [type] = 0;
 
 		inventory [type] += count;
 
@@ -80,20 +64,12 @@ public class Inventory : MonoBehaviour
 		return inventory [type];
 	}
 
-	public string getReadableBlockCount(){
-		string result = "Inventory - ";
-
-		foreach(KeyValuePair<BlockType, int> entry in inventory)
-		{
-			string blockCount = entry.Key.ToString () + ": \t" + entry.Value.ToString () + ": \t";
-			result += blockCount;
-		}
-
-		return result;
+	public GameObject getSelectedBlock(){
+		return blocklist.getOriginalBlock(selectedBlock);
 	}
 
-	public GameObject getSelectedBlock(){
-		return blocks [selectedBlockIndex];
+	public void setSelectedBlock(BlockType block) {
+		this.selectedBlock = block;
 	}
 
 	public bool canAddSelectedBlock() {
@@ -109,10 +85,6 @@ public class Inventory : MonoBehaviour
 		item.quantity = count;
 
 		return item;
-	}
-
-	public GameObject getOriginalBlock(BlockType type) {
-		return Array.Find(blocks, gObject => gObject.GetComponent<Block>().type.Equals(type));
 	}
 }
 

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Recipe : ScriptableObject {
 	public Item[] ingredients;
 	public Item result;
+	public string name;
 	// Use this for initialization
 	void Start () {
 		

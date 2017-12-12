@@ -4,7 +4,7 @@ using System;
 
 public class BlockList : MonoBehaviour
 {
-	public GameObject[] blocks = new GameObject[6];
+	public GameObject[] blocks;
 
 	// Use this for initialization
 	void Start ()
