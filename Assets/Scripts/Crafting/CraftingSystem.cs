@@ -14,10 +14,12 @@ public class CraftingSystem : MonoBehaviour
 	public Text recipeName;
 	private Recipe currentRecipe;
 	private Inventory inventory;
+	private InventoryUI inventoryUI;
 	// Use this for initialization
 	void Start ()
 	{
 		inventory = FindObjectOfType<Inventory> ();
+		inventoryUI = FindObjectOfType<InventoryUI> ();
 	}
 	
 	// Update is called once per frame
@@ -58,15 +60,10 @@ public class CraftingSystem : MonoBehaviour
 	public void showRecipe(Recipe recipe){
 		Item item = recipe.result;
 		recipeSlot.item = item;
-		print ("set item");
 		recipeSlot.image.sprite = item.sprite;
-		print ("set image");
 		recipeSlot.image.enabled = true;
-		print ("set image enabled");
 		recipeSlot.counterText.text = item.quantity.ToString();
-		print ("set count text");
 		recipeSlot.counterText.enabled = true;
-		print ("set recipe name");
 		recipeName.text = recipe.name;
 		showIngredients (recipe);
 	}
@@ -81,17 +78,47 @@ public class CraftingSystem : MonoBehaviour
 
 	public void craft(){
 		if (currentRecipe != null) {
-			foreach (Item ingredient in currentRecipe.ingredients) {
-				Item matchingItem = getItems ().Find (item => item.getBlockType ().Equals (ingredient.getBlockType ()));
-				matchingItem.quantity -= ingredient.quantity;
-				inventory.removeBlocks (ingredient.item, ingredient.quantity);
-			}
+			consumeIngredients ();
+			returnRemainingBlocks ();
 			inventory.AddBlocks (currentRecipe.result.item, currentRecipe.result.quantity);
 			clearSlots ();
+			clearRecipe ();
 		}
 	}
 
+	void consumeIngredients() {
+		foreach (Item ingredient in currentRecipe.ingredients) {
+			Item matchingItem = getItems ().Find (item => item.getBlockType ().Equals (ingredient.getBlockType ()));
+			matchingItem.quantity -= ingredient.quantity;
+			inventory.removeBlocks (ingredient.item, ingredient.quantity);
+		}
+	}
+
+	void returnRemainingBlocks() {
+		foreach (Item item in getItems()) {
+			inventoryUI.AddItem(item);
+		}
+	}
+
+	void clearSlot(ItemSlot slot){
+		slot.item = null;
+		slot.image.sprite = null;
+		slot.image.enabled = false;
+		slot.counterText.text = "0";
+		slot.counterText.enabled = false;
+	}
+
+	void clearRecipe(){
+		clearSlot (recipeSlot);
+		recipeName.text = "";
+		materials.text = "";
+	}
+
 	public void clearSlots (){
+		ItemSlot[] itemSlots = Array.FindAll (slots, slot => slot.item != null);
+		foreach (ItemSlot slot in itemSlots) {
+			clearSlot (slot);
+		}
 	}
 }
 

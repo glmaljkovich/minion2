@@ -30,8 +30,6 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         icon = new GameObject("Icon");                                              // Create object for item's icon
         Image image = icon.AddComponent<Image>();
         image.sprite = GetComponent<Image>().sprite;
-		if(image.sprite != null)
-			print("IMAGE NOT NULL");
         image.raycastTarget = false;                                                // Disable icon's raycast for correct drop handling
         RectTransform iconRect = icon.GetComponent<RectTransform>();
         // Set icon's dimensions
@@ -40,7 +38,6 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         Canvas canvas = GetComponentInParent<Canvas>();                             // Get parent canvas
         if (canvas != null)
         {
-			print("CANVAS NOT NULL");
             // Display on top of all GUI (in parent canvas)
             icon.transform.SetParent(canvas.transform, true);                       // Set canvas as parent
             icon.transform.SetAsLastSibling();                                      // Set as last child in canvas transform

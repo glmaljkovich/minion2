@@ -245,12 +245,18 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
 			ItemSlot slot2 = secondCell.GetComponent<ItemSlot>();
 
 			Item item1 = slot1.item;
-			Item item2 = slot2.item;
+			Image image1 = slot1.image;
+			Text text1 = slot1.counterText;
 
+			Item item2 = slot2.item;
+			Image image2 = slot2.image;
+			Text text2 = slot2.counterText;
 
             if (firstItem != null)
             {
 				slot1.item = item2;
+				slot1.image = image2;
+				slot1.counterText = text2;
                 // Place first item into second cell
                 firstItem.transform.SetParent(secondCell.transform, false);
                 firstItem.transform.localPosition = Vector3.zero;
@@ -259,6 +265,8 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
             if (secondItem != null)
             {
 				slot2.item = item1;
+				slot2.image = image1;
+				slot2.counterText = text1;
                 // Place second item into first cell
                 secondItem.transform.SetParent(firstCell.transform, false);
                 secondItem.transform.localPosition = Vector3.zero;

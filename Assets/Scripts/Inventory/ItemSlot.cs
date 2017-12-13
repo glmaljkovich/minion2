@@ -24,7 +24,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		if (eventData.button == PointerEventData.InputButton.Right && item != null) {
-			print("Set selected block");
+			print("Set selected block: " + item.getBlockType().ToString());
+			print ("Quantity: " + item.quantity);
 			inventory.setSelectedBlock (item.getBlockType ());
 		}
 	}

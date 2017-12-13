@@ -36,6 +36,7 @@ public class InventoryUI : MonoBehaviour
 
 	void updateItemCount(Item itemToUpdate, int count){
 		int i = Array.FindIndex (slots, slot => slot.item.getBlockType().Equals(itemToUpdate.getBlockType()));
+		slots [i].item.quantity = count;
 		slots[i].counterText.text = count.ToString();
 	}
 
