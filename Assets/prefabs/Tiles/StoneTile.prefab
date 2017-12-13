@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114142770295051636}
   - component: {fileID: 60129889432713476}
   - component: {fileID: 95203069458079908}
+  - component: {fileID: 82484123697251926}
   m_Layer: 0
   m_Name: StoneTile
   m_TagString: ground
@@ -92,6 +93,87 @@ PolygonCollider2D:
       - {x: -0.35, y: -0.35}
       - {x: 0.35, y: -0.35}
       - {x: 0.35, y: 0.35}
+--- !u!82 &82484123697251926
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1247922082889276}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6c219264136394313ae77dba18c137cb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  m_ExtensionPropertyValues: []
 --- !u!95 &95203069458079908
 Animator:
   serializedVersion: 3
@@ -125,6 +207,8 @@ MonoBehaviour:
   spawnCount: 1
   hitCoolDown: 0.5
   image: {fileID: 21300000, guid: 5562ea8f0ccde4a9b99b21a858c0a1cc, type: 3}
+  chop: {fileID: 8300000, guid: f0b2c4fcefc8f4e6288de4ea9f687304, type: 3}
+  drop: {fileID: 8300000, guid: 6c219264136394313ae77dba18c137cb, type: 3}
 --- !u!212 &212338184070591652
 SpriteRenderer:
   m_ObjectHideFlags: 1

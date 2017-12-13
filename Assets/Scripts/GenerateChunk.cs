@@ -13,6 +13,7 @@ public class GenerateChunk : MonoBehaviour {
 	[HideInInspector]
 	public float seed;
 	public float padding;
+	public float foodY;
 
 	// Tiles
 	public GameObject stoneTile;
@@ -22,6 +23,10 @@ public class GenerateChunk : MonoBehaviour {
 	public GameObject ironTile;
 	public GameObject goldTile;
 	public GameObject diamondTile;
+
+	// Food
+	public GameObject food;
+
 	private float lastPosX = 0;
 
 	// Chances
@@ -33,6 +38,8 @@ public class GenerateChunk : MonoBehaviour {
 	public float goldChance;
 	[Range (0, 100)]
 	public float diamondChance;
+	[Range (0, 100)]
+	public float foodChance;
 
 	void Start () {
 		Generate ();
@@ -61,7 +68,7 @@ public class GenerateChunk : MonoBehaviour {
 	}
 
 	private void createTile (float x, float y, int index, int perlinHeight){
-		GameObject selectedTile = getTile (index, perlinHeight);
+		GameObject selectedTile = getTile (index, perlinHeight, x, y);
 		GameObject newTile = Instantiate (selectedTile, Vector3.zero, Quaternion.identity) as GameObject;
 
 		newTile.transform.parent = this.gameObject.transform;
@@ -69,7 +76,7 @@ public class GenerateChunk : MonoBehaviour {
 
 	}
 
-	private GameObject getTile(int y, int height) {
+	private GameObject getTile(int y, int height, float theX, float theY) {
 		GameObject selectedTile;
 
 		if (y < height - tileDelta) {
@@ -77,11 +84,22 @@ public class GenerateChunk : MonoBehaviour {
 		} else if (y < height - 1) {
 			selectedTile = dirtTile;
 		} else {
+			putFood (theX, theY);
 			selectedTile = grassTile;
 		}
 
 		return selectedTile;
 	
+	}
+
+	private void putFood(float theX, float theY){
+		float randomChance = Random.Range (0, 100);
+		if(randomChance <= foodChance) {
+			GameObject foodInstance = Instantiate (food, Vector3.zero, Quaternion.identity) as GameObject;
+
+			foodInstance.transform.parent = this.gameObject.transform;
+			foodInstance.transform.localPosition = new Vector3 (theX, theY + foodY);
+		}
 	}
 
 	private GameObject getMineral() {

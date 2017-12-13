@@ -13,6 +13,10 @@ public class Block : MonoBehaviour
 	private float lastHit = 0f;
 	public float hitCoolDown;
 	public Sprite image;
+	private AudioSource audio;
+	private bool dropped = false;
+	public AudioClip chop;
+	public AudioClip drop;
 
 	// Use this for initialization
 	void Start ()
@@ -20,6 +24,7 @@ public class Block : MonoBehaviour
 		myBody = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 		col = GetComponent<Collider2D> ();
+		audio = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -29,6 +34,11 @@ public class Block : MonoBehaviour
 			myBody.bodyType = RigidbodyType2D.Dynamic;
 			transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
 		}
+		if (mined () && !dropped) {
+			dropped = true;
+			audio.clip = drop;
+			audio.Play ();
+		}
 	}
 
 	public void mine(float toolPower){
@@ -36,6 +46,11 @@ public class Block : MonoBehaviour
 			hardness -= toolPower;
 			lastHit = hitCoolDown;
 			anim.SetTrigger("Hit");
+
+			if (!audio.isPlaying) {
+				audio.clip = chop;
+				audio.Play ();
+			}
 		} else {
 			lastHit -= Time.deltaTime;
 		}

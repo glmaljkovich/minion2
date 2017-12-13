@@ -58,6 +58,7 @@ MonoBehaviour:
   groundBaseHeight: 8
   seed: 0
   padding: 1
+  foodY: 25
   stoneTile: {fileID: 1247922082889276, guid: a2a1517ff82924704a645343bae828f9, type: 2}
   dirtTile: {fileID: 1454785481633504, guid: ff31730f87e72402b92dea7ed7d656c1, type: 2}
   grassTile: {fileID: 1718726016004012, guid: e0f434ac849914ede888ce2172180dbb, type: 2}
@@ -66,7 +67,9 @@ MonoBehaviour:
   goldTile: {fileID: 1223856968256912, guid: 88d9519252715466d83a8b98db9adacb, type: 2}
   diamondTile: {fileID: 1906404110992872, guid: 47cbcd37f7b474b6987e83052dcc0602,
     type: 2}
+  food: {fileID: 1596187830768316, guid: e7651d1478deb48059cca53c2690ad1e, type: 2}
   coalChance: 5
   ironChance: 3.3
   goldChance: 2.7
   diamondChance: 1.1
+  foodChance: 2

@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 114322903986829044}
   - component: {fileID: 114414410480054480}
   - component: {fileID: 114361499527016914}
+  - component: {fileID: 114274945065318766}
   m_Layer: 8
   m_Name: Rogue_05
   m_TagString: Player
@@ -751,8 +752,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013304306144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 27.710001, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 29.899994, y: 27.709993, z: 0}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_Children:
   - {fileID: 4000010503939236}
   m_Father: {fileID: 0}
@@ -1016,6 +1017,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114274945065318766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013304306144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5799ee46b56a34eafb7465fa8855e412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: 100
+  maxFood: 100
+  hungerBar: {fileID: 0}
 --- !u!114 &114322903986829044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1028,7 +1043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  scale: {x: 0, y: 0}
+  maxHealth: 100
   character: {fileID: 114339960821651408}
   repeatDamagePeriod: 2
   healthBar: {fileID: 0}
@@ -1060,8 +1075,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fbe8a8739c24b47a453e23454ad81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 10
-  walkSpeed: 5
+  runSpeed: 15
+  walkSpeed: 7
   isDead: 0
 --- !u!114 &114361499527016914
 MonoBehaviour:
@@ -1076,13 +1091,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryText: {fileID: 0}
   selectedBlockText: {fileID: 0}
-  blocks:
-  - {fileID: 1718726016004012, guid: e0f434ac849914ede888ce2172180dbb, type: 2}
-  - {fileID: 1454785481633504, guid: ff31730f87e72402b92dea7ed7d656c1, type: 2}
-  - {fileID: 1247922082889276, guid: a2a1517ff82924704a645343bae828f9, type: 2}
-  - {fileID: 1196154022973074, guid: d86415ca38b95453dabbe1b611f1d9b4, type: 2}
-  - {fileID: 1223856968256912, guid: 88d9519252715466d83a8b98db9adacb, type: 2}
-  - {fileID: 1906404110992872, guid: 47cbcd37f7b474b6987e83052dcc0602, type: 2}
 --- !u!114 &114414410480054480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1094,6 +1102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f31e44457c1d84c41840b113c5b30722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxDistance: 7
+  blockPadding: 2
+  isDragging: 0
 --- !u!114 &114572588382500416
 MonoBehaviour:
   m_ObjectHideFlags: 1

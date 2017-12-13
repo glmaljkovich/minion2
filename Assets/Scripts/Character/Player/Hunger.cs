@@ -24,6 +24,15 @@ public class Hunger : MonoBehaviour
 		hungerBar.updateBar (food, maxFood);
 	}
 
+	public void addFood(float foodPoints){
+		if (food + foodPoints > maxFood) {
+			food = maxFood;
+		} else {
+			food += foodPoints;
+		}
+
+	}
+
 	void getHungry(){
 		if (food > 0) {
 			food -= 0.5f * Time.deltaTime;

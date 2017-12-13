@@ -1715,15 +1715,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1000013304306144, guid: 30ef59945f2a7ea499bbbe10a7d48f1a, type: 2}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 114322903986829044, guid: 30ef59945f2a7ea499bbbe10a7d48f1a,
+    - target: {fileID: 114274945065318766, guid: 30ef59945f2a7ea499bbbe10a7d48f1a,
         type: 2}
-      propertyPath: healthBar
+      propertyPath: hungerBar
       value: 
-      objectReference: {fileID: 1740776571}
+      objectReference: {fileID: 744509209}
     - target: {fileID: 114361499527016914, guid: 30ef59945f2a7ea499bbbe10a7d48f1a,
         type: 2}
       propertyPath: inventoryText
@@ -1734,20 +1730,14 @@ Prefab:
       propertyPath: selectedBlockText
       value: 
       objectReference: {fileID: 1133577342}
-    - target: {fileID: 114359355924199832, guid: 30ef59945f2a7ea499bbbe10a7d48f1a,
+    - target: {fileID: 114322903986829044, guid: 30ef59945f2a7ea499bbbe10a7d48f1a,
         type: 2}
-      propertyPath: runSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114359355924199832, guid: 30ef59945f2a7ea499bbbe10a7d48f1a,
-        type: 2}
-      propertyPath: walkSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114414410480054480, guid: 30ef59945f2a7ea499bbbe10a7d48f1a,
-        type: 2}
-      propertyPath: maxDistance
-      value: 7
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1740776571}
+    - target: {fileID: 1000013304306144, guid: 30ef59945f2a7ea499bbbe10a7d48f1a, type: 2}
+      propertyPath: m_Name
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30ef59945f2a7ea499bbbe10a7d48f1a, type: 2}
@@ -1757,20 +1747,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000013304306144, guid: 30ef59945f2a7ea499bbbe10a7d48f1a,
     type: 2}
   m_PrefabInternal: {fileID: 463615189}
---- !u!114 &463615191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 463615190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5799ee46b56a34eafb7465fa8855e412, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  food: 100
-  maxFood: 100
-  hungerBar: {fileID: 744509209}
 --- !u!114 &463615193 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114339960821651408, guid: 30ef59945f2a7ea499bbbe10a7d48f1a,
