@@ -5,45 +5,60 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {	
 	public float health = 100f;					// The player's health.
-
-	public Vector2 scale;
+	public float maxHealth = 100f;
 	public Character character;
 	public float repeatDamagePeriod = 2f;		// How frequently the player can be damaged.
-	public Image healthBar;			// Reference to the sprite renderer of the health bar.
+	public StatBar healthBar;			// Reference to the sprite renderer of the health bar.
 	private float lastHitTime;					// The time at which the player was last hit.
-	private Vector3 healthScale;				// The local scale of the health bar initially (with full health).
-	private Animator anim;						// Reference to the Animator on the player
-
 
 	void Awake () {
-		anim = GetComponent<Animator>();
 		character = gameObject.GetComponent<Character> (); 
-		healthScale = healthBar.transform.localScale;
+		health = maxHealth;
 	}
 
 	void Update(){
 		if (health <= 0) {
 			character.die ();
 		}
+		UpdateHealthBar ();
+	}
+
+	public void revive() {
+		health = maxHealth;
+		(healthBar as PlayerHealthBar).revive (); 
 	}
 
 	public void takeDamage (float damage) {
 		if (health > 0f && damage > 0) {
-			health -= damage;
-			UpdateHealthBar();
+			health = Mathf.Max (0, health - damage);
 		}
 	}
 
 	public void hide(){
-		healthBar.enabled = false;
+		healthBar.hide();
 	}
 
 	public void show(){
-		healthBar.enabled = true;
+		healthBar.show();
 	}
-		
-	public void UpdateHealthBar () {
-		//healthBar.material.color = Color.Lerp(healthBar.material.color, Color.red, 1 - health * 0.01f);
-		healthBar.transform.localScale = new Vector3(healthScale.x * health * 0.01f, scale.y, scale.x);
+
+	public void UpdateHealthBar(){
+		healthBar.updateBar (health, maxHealth);
+	}
+
+	public void addMaxHp(float hp){
+		maxHealth += hp;
+	}
+
+	public void addHP(float hp) {
+		if (health + hp >= maxHealth) {
+			health = maxHealth;
+		} else {
+			health += hp;
+		}
+	}
+
+	public void die(){
+		health = 0;
 	}
 }
